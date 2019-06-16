@@ -1,6 +1,5 @@
 node_modules
-/dist
-/.idea
+.idea
 .DS_Store
 /test/coverage/
 yarn-error.log
