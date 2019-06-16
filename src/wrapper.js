@@ -5,7 +5,7 @@ import component from "./vue-input-price-vietnamese.vue";
 export function install(Vue) {
     if (install.installed) return;
     install.installed = true;
-    Vue.component('InputNumberVietnamese', component);
+    Vue.component('VueInputNumberVietnamese', component);
 }
 
 // Create module definition for Vue.use()

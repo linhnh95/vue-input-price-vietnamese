@@ -12,7 +12,8 @@
         props: {
             value: {
                 type: [String, Number],
-                default: ''
+                default: '',
+                require : true
             },
             is_decimal : {
                 type : Boolean,
@@ -24,11 +25,13 @@
             }
         },
         components: {},
-        mounted() {},
-        watch: {},
+        mounted() {
+        },
+        watch: {
+        },
         data() {
             return {
-
+                number : ""
             };
         },
         methods : {
@@ -42,7 +45,7 @@
                 // Clear các giá trị ngoài số nguyên và dấu phẩy nếu có.
                 let cVal = this.clear(value);
                 let fVal = "";
-                if (String(cVal).indexOf(",") > -1) {
+                if (this.is_decimal && String(cVal).indexOf(",") > -1) {
                     let dVal = String(cVal).substring(String(cVal).indexOf(",") + 1, String(cVal).length);
                     if(dVal.length > 0){
                         // Format lại dữ liệu trả ra.
@@ -54,6 +57,7 @@
                     // Format lại dữ liệu trả ra.
                     fVal = this.format(cVal);
                 }
+                this.number = fVal;
                 // Gán lại giá trị đã format vào ô input
                 this.$refs.input.value = fVal;
                 // Trả lại giá trị đã loại bỏ các kí tự ngoài số nguyên và đấu phẩy
@@ -68,7 +72,9 @@
              * @return String after format
              * */
             displayValue: function (value) {
-                return this.format(value);
+                let fVal = this.format(value);
+                this.number = fVal;
+                return fVal;
             },
 
             /**
@@ -82,7 +88,7 @@
             format(value) {
                 if (value !== "") {
                     // Nếu chuỗi nhập vào chứa dấu phẩy
-                    if (String(value).indexOf(",") > -1) {
+                    if (this.is_decimal && String(value).indexOf(",") > -1) {
                         let oVal = String(value).substring(0, String(value).indexOf(","));
 
                         // Giá trị trước dấu phẩy
@@ -116,24 +122,30 @@
                             } else {
                                 dValR = dVal.substring(0, 2);
                             }
-                            let newValue = "";
                             if(isNaN(oValR)){
                                 oValR = 0;
                             }
                             // Nếu số đứng trước dấu phẩy là 1 số. Thì format số đứng trước dấu phẩy
                             oValR = oValR.replace(/(\d)(?=(\d{3})+(?:\.\d+)?$)/g, "$1.");
 
+                            let newVal = "";
                             // Nếu số đứng sau dấu phẩy là số. Thì sẽ nối số thứ 1 và số thứ 2 lại với nhau với dấu phẩy ngăn cách
                             if (this.isNumeric(dValR)) {
-                                newValue = oValR + "," + dValR;
+                                newVal = oValR + "," + dValR;
                             } else {
-                                newValue = oValR;
+                                newVal = oValR;
                             }
-                            return newValue;
+                            return newVal;
                         }
                     } else {
-                        let newValue = String(parseFloat(value)).replace(/(\d)(?=(\d{3})+(?:\.\d+)?$)/g, "$1.");
-                        return newValue;
+                        let newVal = "";
+                        if(String(value).indexOf(",") > -1){
+                            let oVal = String(value).substring(0, String(value).indexOf(","));
+                            newVal = String(parseFloat(oVal)).replace(/(\d)(?=(\d{3})+(?:\.\d+)?$)/g, "$1.");
+                        }else{
+                            newVal = String(parseFloat(value)).replace(/(\d)(?=(\d{3})+(?:\.\d+)?$)/g, "$1.");
+                        }
+                        return newVal;
                     }
                 }
                 return "";
@@ -149,7 +161,7 @@
             clear(value) {
                 if(value !== "") {
                     // Nếu chuỗi truyền vào chứa dấu phẩy
-                    if (String(value).indexOf(",") > -1) {
+                    if (this.is_decimal && String(value).indexOf(",") > -1) {
                         let oVal = String(value).substring(0, String(value).indexOf(","));
                         let dVal = String(value).substring(String(value).indexOf(",") + 1, String(value).length);
 
@@ -169,7 +181,13 @@
                             return newValue;
                         }
                     } else {
-                        let newVal = String(value).replace(/[^\d]/g, "");
+                        let newVal = "";
+                        if(String(value).indexOf(",") > -1){
+                            let oVal = String(value).substring(0, String(value).indexOf(","));
+                            newVal = String(oVal).replace(/[^\d]/g, "");
+                        }else{
+                            newVal = String(value).replace(/[^\d]/g, "");
+                        }
                         if(newVal !== ""){
                             return newVal;
                         }else{
