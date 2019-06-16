@@ -1,103 +1,110 @@
 {
-    "name": "vue-input-price-vietnamese",
-    "description": "The library is used to create input cards for the price of Vietnam",
-    "license": "MIT",
-    "version": "1.0.0",
-    "repository": {
-        "type": "git",
-        "url": "git+https://github.com/linhnh95/vue-input-price-vietnamese.git"
-    },
-    "keywords": [
-        "component",
-        "currency",
-        "input",
-        "text",
-        "number",
-        "numeric",
-        "vietnamese",
-        "vue",
-        "vue.js"
-    ],
-    "homepage": "https://github.com/linhnh95/vue-input-price-vietnamese",
-    "main": "dist/vue-input-price-vietnamese.umd.js",
-    "module": "dist/vue-input-price-vietnamese.esm.js",
-    "unpkg": "dist/vue-input-price-vietnamese.min.js",
-    "browser": {
-        "./sfc": "src/vue-input-price-vietnamese.vue"
-    },
-    "scripts": {
-        "test": "cross-env BABEL_ENV=test ./node_modules/.bin/karma start test/karma.config.js",
-        "test:watch": "cross-env BABEL_ENV=test ./node_modules/.bin/karma start test/karma.config.js --single-run=false",
-        "lint": "./node_modules/.bin/eslint --ext .js,.vue src spec",
-        "build": "./node_modules/.bin/webpack --hide-modules -p --progress",
-        "report-coverage": "codecov"
-    },
-    "devDependencies": {
-        "@vue/cli-service": "^3.2.0",
-        "babel-core": "^6.26.3",
-        "babel-loader": "^7.1.2",
-        "babel-plugin-istanbul": "^4.1.4",
-        "babel-plugin-transform-object-rest-spread": "^6.26.0",
-        "babel-preset-env": "^1.7.0",
-        "chai": "^4.1.2",
-        "clean-webpack-plugin": "^0.1.16",
-        "codecov": "^2.3.0",
-        "cross-env": "^5.0.5",
-        "css-loader": "^0.28.7",
-        "eslint": "^4.6.0",
-        "eslint-plugin-vue": "^4.2.0",
-        "expect": "^24.8.0",
-        "karma": "^1.7.1",
-        "karma-coverage": "^1.1.1",
-        "karma-mocha": "^1.3.0",
-        "karma-phantomjs-launcher": "^1.0.4",
-        "karma-sinon-chai": "^1.3.2",
-        "karma-sourcemap-loader": "^0.3.7",
-        "karma-spec-reporter": "^0.0.31",
-        "karma-webpack": "^2.0.4",
-        "mocha": "^3.5.0",
-        "phantomjs-prebuilt": "^2.1.15",
-        "sinon": "^3.2.1",
-        "sinon-chai": "^2.13.0",
-        "vue": "^2.5.16",
-        "vue-loader": "^14.0.0",
-        "vue-template-compiler": "^2.5.16",
-        "webpack": "^3.5.5",
-        "webpack-cli": "^3.3.4"
-    },
-    "dependencies": {
-        "avoriaz": "^6.3.0",
-        "yarn": "^1.16.0"
-    },
-    "babel": {
-        "presets": [
-            [
-                "env",
-                {
-                    "uglify": true,
-                    "modules": false,
-                    "targets": {
-                        "browsers": [
-                            "> 1%",
-                            "last 2 versions",
-                            "not ie <= 8"
-                        ]
-                    }
-                }
+  "name": "vue-input-price-vietnamese",
+  "description": "The library is used to create input cards for the price of Vietnam",
+  "license": "MIT",
+  "version": "1.0.0",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/linhnh95/vue-input-price-vietnamese.git"
+  },
+  "keywords": [
+    "component",
+    "currency",
+    "input",
+    "text",
+    "number",
+    "numeric",
+    "vietnamese",
+    "vue",
+    "vue.js"
+  ],
+  "homepage": "https://github.com/linhnh95/vue-input-price-vietnamese",
+  "main": "dist/vue-input-price-vietnamese.umd.js",
+  "module": "dist/vue-input-price-vietnamese.esm.js",
+  "unpkg": "dist/vue-input-price-vietnamese.min.js",
+  "browser": {
+    "./sfc": "src/vue-input-price-vietnamese.vue"
+  },
+  "scripts": {
+    "test": "cross-env BABEL_ENV=test ./node_modules/.bin/karma start test/karma.config.js",
+    "test:watch": "cross-env BABEL_ENV=test ./node_modules/.bin/karma start test/karma.config.js --single-run=false",
+    "lint": "eslint --ext .js,.vue src spec",
+    "build": "webpack --hide-modules -p --progress",
+    "report-coverage": "codecov"
+  },
+  "devDependencies": {
+    "@vue/cli-service": "^3.2.0",
+    "babel-core": "^6.26.3",
+    "babel-loader": "^7.1.2",
+    "babel-plugin-istanbul": "^4.1.4",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
+    "babel-preset-env": "^1.7.0",
+    "chai": "^4.1.2",
+    "clean-webpack-plugin": "^0.1.16",
+    "codecov": "^2.3.0",
+    "cross-env": "^5.0.5",
+    "css-loader": "^0.28.7",
+    "eslint": "^4.6.0",
+    "eslint-plugin-vue": "^4.2.0",
+    "expect": "^24.8.0",
+    "karma": "^1.7.1",
+    "karma-coverage": "^1.1.1",
+    "karma-mocha": "^1.3.0",
+    "karma-phantomjs-launcher": "^1.0.4",
+    "karma-sinon-chai": "^1.3.2",
+    "karma-sourcemap-loader": "^0.3.7",
+    "karma-spec-reporter": "^0.0.31",
+    "karma-webpack": "^2.0.4",
+    "mocha": "^3.5.0",
+    "phantomjs-prebuilt": "^2.1.15",
+    "sinon": "^3.2.1",
+    "sinon-chai": "^2.13.0",
+    "vue": "^2.5.16",
+    "vue-loader": "^14.0.0",
+    "vue-template-compiler": "^2.5.16",
+    "webpack": "^3.5.5",
+    "webpack-cli": "^3.3.4"
+  },
+  "dependencies": {
+    "avoriaz": "^6.3.0",
+    "yarn": "^1.16.0"
+  },
+  "babel": {
+    "presets": [
+      [
+        "env",
+        {
+          "uglify": true,
+          "modules": false,
+          "targets": {
+            "browsers": [
+              "> 1%",
+              "last 2 versions",
+              "not ie <= 8"
             ]
-        ],
-        "env": {
-            "test": {
-                "plugins": [
-                    "istanbul"
-                ]
-            }
+          }
         }
-    },
-    "eslintConfig": {
-        "extends": [
-            "eslint:recommended",
-            "plugin:vue/recommended"
+      ]
+    ],
+    "env": {
+      "test": {
+        "plugins": [
+          "istanbul"
         ]
+      }
     }
+  },
+  "eslintConfig": {
+    "extends": [
+      "eslint:recommended",
+      "plugin:vue/recommended"
+    ]
+  },
+  "bugs": {
+    "url": "https://github.com/linhnh95/vue-input-price-vietnamese/issues"
+  },
+  "directories": {
+    "test": "test"
+  },
+  "author": "Linh Nguyen Hong"
 }
