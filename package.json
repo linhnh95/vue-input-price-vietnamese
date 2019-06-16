@@ -1,0 +1,57 @@
+{
+    "name": "vue-input-price-vietnamese",
+    "description": "The library is used to create input cards for the price of Vietnam",
+    "license": "MIT",
+    "version": "1.0.0",
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/linhnh95/vue-input-price-vietnamese.git"
+    },
+    "keywords": [
+        "component",
+        "currency",
+        "input",
+        "text",
+        "number",
+        "numeric",
+        "vietnamese",
+        "vue",
+        "vue.js"
+    ],
+    "homepage": "https://github.com/linhnh95/vue-input-price-vietnamese#readme",
+    "main": "dist/vue-input-price-vietnamese.umd.js",
+    "module": "dist/vue-input-price-vietnamese.esm.js",
+    "unpkg": "dist/vue-input-price-vietnamese.min.js",
+    "browser": {
+        "./sfc": "src/vue-input-price-vietnamese.vue"
+    },
+    "scripts": {
+        "build": "npm run build:umd & npm run build:es & npm run build:unpkg",
+        "build:umd": "rollup --config build/rollup.config.js --format umd --file dist/vue-input-price-vietnamese.umd.js",
+        "build:es": "rollup --config build/rollup.config.js --format es --file dist/vue-input-price-vietnamese.esm.js",
+        "build:unpkg": "rollup --config build/rollup.config.js --format iife --file dist/vue-input-price-vietnamese.min.js"
+    },
+    "devDependencies": {
+        "@vue/cli-service": "^3.2.0",
+        "rollup": "^0.57.1",
+        "rollup-plugin-buble": "^0.19.2",
+        "rollup-plugin-vue": "^3.0.0",
+        "vue": "^2.5.16",
+        "vue-loader": "^14.0.0",
+        "vue-template-compiler": "^2.5.16",
+        "eslint": "^4.6.0",
+        "eslint-plugin-vue": "^4.2.0",
+        "karma": "^1.7.1",
+        "karma-coverage": "^1.1.1",
+        "karma-mocha": "^1.3.0",
+        "karma-phantomjs-launcher": "^1.0.4",
+        "karma-sinon-chai": "^1.3.2",
+        "karma-sourcemap-loader": "^0.3.7",
+        "karma-spec-reporter": "^0.0.31",
+        "karma-webpack": "^2.0.4",
+        "mocha": "^3.5.0"
+    },
+    "dependencies": {
+        "yarn": "^1.16.0"
+    }
+}
